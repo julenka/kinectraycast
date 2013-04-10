@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <RootNamespace>rayCast</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(OFX_DEVLAB_HOME)\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(OFX_DEVLAB_HOME)\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">obj\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">obj\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)_debug</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)</TargetName>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\ofxKinectUtils\src;..\..\..\libraries\SimpleKinect;$(KINECTSDK10_DIR)\inc;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\libraries\SimpleKinect\lib;$(KINECTSDK10_DIR)\lib\x86;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>..\ofxKinectUtils\src;..\..\..\libraries\SimpleKinect;$(KINECTSDK10_DIR)\inc;$(VCInstallDir)include;$(VCInstallDir)atlmfc\include;$(WindowsSdkDir)include;$(FrameworkSDKDir)\include;</IncludePath>
+    <LibraryPath>..\..\..\libraries\SimpleKinect\lib;$(KINECTSDK10_DIR)\lib\x86;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSdkDir)lib;$(FrameworkSDKDir)\lib</LibraryPath>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(OFX_HOME)\addons\ofxNetwork\libs;$(OFX_HOME)\addons\ofxNetwork\src;$(OFX_HOME)\addons\ofxThread\src;src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(TargetDir)$(TargetName)_debugInfo.pdb</ProgramDatabaseFile>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>winmm.lib;kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;SimpleKinect.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories);$(OFX_DEVLAB_HOME)\lib</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>WIN32;_CONSOLE;POCO_STATIC;CAIRO_WIN32_STATIC_BUILD;DISABLE_SOME_FLOATING_POINT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat />
+      <AdditionalIncludeDirectories>$(OFX_HOME)\libs\openFrameworks;$(OFX_HOME)\libs\openFrameworks\graphics;$(OFX_HOME)\libs\openFrameworks\app;$(OFX_HOME)\libs\openFrameworks\sound;$(OFX_HOME)\libs\openFrameworks\utils;$(OFX_HOME)\libs\openFrameworks\communication;$(OFX_HOME)\libs\openFrameworks\video;$(OFX_HOME)\libs\openFrameworks\types;$(OFX_HOME)\libs\openFrameworks\math;$(OFX_HOME)\libs\openFrameworks\3d;$(OFX_HOME)\libs\openFrameworks\gl;$(OFX_HOME)\libs\openFrameworks\events;$(OFX_HOME)\libs\glut\include;$(OFX_HOME)\libs\rtAudio\include;$(OFX_HOME)\libs\quicktime\include;$(OFX_HOME)\libs\freetype\include;$(OFX_HOME)\libs\freetype\include\freetype2;$(OFX_HOME)\libs\freeImage\include;$(OFX_HOME)\libs\fmodex\include;$(OFX_HOME)\libs\videoInput\include;$(OFX_HOME)\libs\glew\include\;$(OFX_HOME)\libs\glu\include;$(OFX_HOME)\libs\tess2\include;$(OFX_HOME)\libs\cairo\include\cairo;$(OFX_HOME)\libs\poco\include;$(OFX_HOME)\addons;$(OFX_HOME)\addons\ofxNetwork\libs;$(OFX_HOME)\addons\ofxNetwork\src;$(OFX_HOME)\addons\ofxThread\src;src</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <TargetMachine>MachineX86</TargetMachine>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <AdditionalDependencies>winmm.lib;kernel32.lib;user32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;Kinect10.lib;SimpleKinect.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OFX_HOME)\libs\glut\lib\vs2010;$(OFX_HOME)\libs\rtAudio\lib\vs2010;$(OFX_HOME)\libs\FreeImage\lib\vs2010;$(OFX_HOME)\libs\freetype\lib\vs2010;$(OFX_HOME)\libs\quicktime\lib\vs2010;$(OFX_HOME)\libs\fmodex\lib\vs2010;$(OFX_HOME)\libs\videoInput\lib\vs2010;$(OFX_HOME)\libs\cairo\lib\vs2010;$(OFX_HOME)\libs\glew\lib\vs2010;$(OFX_HOME)\libs\glu\lib\vs2010;$(OFX_HOME)\libs\Poco\lib\vs2010;$(OFX_HOME)\libs\tess2\lib\vs2010</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+    <PostBuildEvent>
+      <Command />
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\rayCast.cpp" />
+    <ClCompile Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPManager.cpp" />
+    <ClCompile Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxUDPManager.cpp" />
+    <ClCompile Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPClient.cpp" />
+    <ClCompile Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPServer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPClient.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxNetworkUtils.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxUDPManager.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPManager.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxNetwork.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxNetwork\src\ofxTCPServer.h" />
+    <ClInclude Include="$(OFX_HOME)\addons\ofxThread\src\ofxThread.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\libraries\SimpleKinect\SimpleKinect.vcxproj">
+      <Project>{5cdd4c2f-ef6b-4e31-b1ea-8042079722e4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="$(OFX_HOME)\libs\openFrameworksCompiled\project\vs2010\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\ofxKinectUtils\ofxKinectUtils.vcxproj">
+      <Project>{26d3aeb3-4215-4d29-a750-608f6f100b63}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\kinectView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\orthoCamera.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\skeletonView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\skeletonMetrics.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\handMesh.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\kinectView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\orthoCamera.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\skeletonView.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\skeletonMetrics.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\handMesh.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
